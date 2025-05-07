@@ -1,7 +1,7 @@
 import React from "react";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-
+import "./App.css";
 // Регистрируем необходимые элементы для Pie Chart
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -20,7 +20,7 @@ function App() {
         label: "Процент задач",
         data: [40, 25, 20, 10, 5], // Процентное соотношение
         backgroundColor: [
-          "rgba(75, 192, 192, 0.6)",
+          "rgba(67, 224, 101, 0.6)",
           "rgba(255, 159, 64, 0.6)",
           "rgba(255, 99, 132, 0.6)",
           "rgba(54, 162, 235, 0.6)",
@@ -38,56 +38,123 @@ function App() {
     ],
   };
 
+  // Цвета задач
+  const colors = [
+    "rgba(67, 224, 101, 0.6)",
+    "rgba(255, 159, 64, 0.6)",
+    "rgba(255, 99, 132, 0.6)",
+    "rgba(54, 162, 235, 0.6)",
+    "rgba(153, 102, 255, 0.6)",
+  ];
+
   return (
-    <div style={{ width: "400px", margin: "50px auto" }}>
-      <h2>Мои задачи на работе</h2>
-      <Pie data={data} />
-      <table
-        style={{ marginTop: "20px", borderCollapse: "collapse", width: "100%" }}
+    <div id="container">
+      <h2 style={{ textAlign: "center" }}>
+        Список задач для командной разработки проекта
+      </h2>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          gap: "20px",
+        }}
       >
-        <thead>
-          <tr>
-            <th style={{ border: "1px solid #ddd", padding: "8px" }}>
-              Статус задачи
-            </th>
-            <th style={{ border: "1px solid #ddd", padding: "8px" }}>
-              Процент
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style={{ border: "1px solid #ddd", padding: "8px" }}>
-              Выполненные
-            </td>
-            <td style={{ border: "1px solid #ddd", padding: "8px" }}>40%</td>
-          </tr>
-          <tr>
-            <td style={{ border: "1px solid #ddd", padding: "8px" }}>
-              В очереди
-            </td>
-            <td style={{ border: "1px solid #ddd", padding: "8px" }}>25%</td>
-          </tr>
-          <tr>
-            <td style={{ border: "1px solid #ddd", padding: "8px" }}>
-              В процессе
-            </td>
-            <td style={{ border: "1px solid #ddd", padding: "8px" }}>20%</td>
-          </tr>
-          <tr>
-            <td style={{ border: "1px solid #ddd", padding: "8px" }}>
-              На доработку
-            </td>
-            <td style={{ border: "1px solid #ddd", padding: "8px" }}>10%</td>
-          </tr>
-          <tr>
-            <td style={{ border: "1px solid #ddd", padding: "8px" }}>
-              Отложенные
-            </td>
-            <td style={{ border: "1px solid #ddd", padding: "8px" }}>5%</td>
-          </tr>
-        </tbody>
-      </table>
+        <div
+          style={{
+            marginTop: "20px",
+            borderCollapse: "collapse",
+            width: "50%",
+          }}
+        >
+          <Pie data={data} />
+        </div>
+        <table
+          style={{
+            marginTop: "20px",
+            borderCollapse: "collapse",
+            width: "50%",
+          }}
+        >
+          <thead>
+            <tr>
+              <th style={{ border: "1px solid #ddd", padding: "8px" }}>
+                Статус задачи
+              </th>
+              <th style={{ border: "1px solid #ddd", padding: "8px" }}>
+                Процент
+              </th>
+              <th style={{ border: "1px solid #ddd", padding: "8px" }}>Цвет</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style={{ border: "1px solid #ddd", padding: "8px" }}>
+                Выполненные
+              </td>
+              <td style={{ border: "1px solid #ddd", padding: "8px" }}>40%</td>
+              <td
+                style={{
+                  border: "1px solid #ddd",
+                  padding: "8px",
+                  backgroundColor: colors[0],
+                }}
+              ></td>
+            </tr>
+            <tr>
+              <td style={{ border: "1px solid #ddd", padding: "8px" }}>
+                В очереди
+              </td>
+              <td style={{ border: "1px solid #ddd", padding: "8px" }}>25%</td>
+              <td
+                style={{
+                  border: "1px solid #ddd",
+                  padding: "8px",
+                  backgroundColor: colors[1],
+                }}
+              ></td>
+            </tr>
+            <tr>
+              <td style={{ border: "1px solid #ddd", padding: "8px" }}>
+                В процессе
+              </td>
+              <td style={{ border: "1px solid #ddd", padding: "8px" }}>20%</td>
+              <td
+                style={{
+                  border: "1px solid #ddd",
+                  padding: "8px",
+                  backgroundColor: colors[2],
+                }}
+              ></td>
+            </tr>
+            <tr>
+              <td style={{ border: "1px solid #ddd", padding: "8px" }}>
+                На доработку
+              </td>
+              <td style={{ border: "1px solid #ddd", padding: "8px" }}>10%</td>
+              <td
+                style={{
+                  border: "1px solid #ddd",
+                  padding: "8px",
+                  backgroundColor: colors[3],
+                }}
+              ></td>
+            </tr>
+            <tr>
+              <td style={{ border: "1px solid #ddd", padding: "8px" }}>
+                Отложенные
+              </td>
+              <td style={{ border: "1px solid #ddd", padding: "8px" }}>5%</td>
+              <td
+                style={{
+                  border: "1px solid #ddd",
+                  padding: "8px",
+                  backgroundColor: colors[4],
+                }}
+              ></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
