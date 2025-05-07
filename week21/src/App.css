@@ -1,4 +1,25 @@
-#container {
-  max-width: "900px";
-  margin: "50px auto";
+.container {
+  max-width: 900px;
+  margin: 50px auto;
+}
+
+.title {
+  text-align: center;
+}
+
+.main-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.pie {
+  margin-top: 20px;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+.table {
+  border: 1px solid #ddd;
+  padding: 8px;
 }

@@ -27,7 +27,7 @@ function App() {
           "rgba(153, 102, 255, 0.6)",
         ],
         borderColor: [
-          "rgba(75, 192, 192, 1)",
+          "rgba(25, 84, 37, 0.6)",
           "rgba(255, 159, 64, 1)",
           "rgba(255, 99, 132, 1)",
           "rgba(54, 162, 235, 1)",
@@ -48,109 +48,45 @@ function App() {
   ];
 
   return (
-    <div id="container">
-      <h2 style={{ textAlign: "center" }}>
-        Список задач для командной разработки проекта
-      </h2>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          gap: "20px",
-        }}
-      >
-        <div
-          style={{
-            marginTop: "20px",
-            borderCollapse: "collapse",
-            width: "50%",
-          }}
-        >
+    <div className="container">
+      <h2 className="title">Список задач для командной разработки проекта</h2>
+      <div className="main-box">
+        <div className="pie">
           <Pie data={data} />
         </div>
-        <table
-          style={{
-            marginTop: "20px",
-            borderCollapse: "collapse",
-            width: "50%",
-          }}
-        >
+        <table className="pie">
           <thead>
             <tr>
-              <th style={{ border: "1px solid #ddd", padding: "8px" }}>
-                Статус задачи
-              </th>
-              <th style={{ border: "1px solid #ddd", padding: "8px" }}>
-                Процент
-              </th>
-              <th style={{ border: "1px solid #ddd", padding: "8px" }}>Цвет</th>
+              <th className="table">Статус задачи</th>
+              <th className="table">Процент</th>
+              <th className="table">Цвет</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td style={{ border: "1px solid #ddd", padding: "8px" }}>
-                Выполненные
-              </td>
-              <td style={{ border: "1px solid #ddd", padding: "8px" }}>40%</td>
-              <td
-                style={{
-                  border: "1px solid #ddd",
-                  padding: "8px",
-                  backgroundColor: colors[0],
-                }}
-              ></td>
+              <td className="table">Выполненные</td>
+              <td className="table">40%</td>
+              <td className="table" style={{ backgroundColor: colors[0] }}></td>
             </tr>
             <tr>
-              <td style={{ border: "1px solid #ddd", padding: "8px" }}>
-                В очереди
-              </td>
-              <td style={{ border: "1px solid #ddd", padding: "8px" }}>25%</td>
-              <td
-                style={{
-                  border: "1px solid #ddd",
-                  padding: "8px",
-                  backgroundColor: colors[1],
-                }}
-              ></td>
+              <td className="table">В очереди</td>
+              <td className="table">25%</td>
+              <td className="table" style={{ backgroundColor: colors[1] }}></td>
             </tr>
             <tr>
-              <td style={{ border: "1px solid #ddd", padding: "8px" }}>
-                В процессе
-              </td>
-              <td style={{ border: "1px solid #ddd", padding: "8px" }}>20%</td>
-              <td
-                style={{
-                  border: "1px solid #ddd",
-                  padding: "8px",
-                  backgroundColor: colors[2],
-                }}
-              ></td>
+              <td className="table">В процессе</td>
+              <td className="table">20%</td>
+              <td className="table" style={{ backgroundColor: colors[2] }}></td>
             </tr>
             <tr>
-              <td style={{ border: "1px solid #ddd", padding: "8px" }}>
-                На доработку
-              </td>
-              <td style={{ border: "1px solid #ddd", padding: "8px" }}>10%</td>
-              <td
-                style={{
-                  border: "1px solid #ddd",
-                  padding: "8px",
-                  backgroundColor: colors[3],
-                }}
-              ></td>
+              <td className="table">На доработку</td>
+              <td className="table">10%</td>
+              <td className="table" style={{ backgroundColor: colors[3] }}></td>
             </tr>
             <tr>
-              <td style={{ border: "1px solid #ddd", padding: "8px" }}>
-                Отложенные
-              </td>
-              <td style={{ border: "1px solid #ddd", padding: "8px" }}>5%</td>
-              <td
-                style={{
-                  border: "1px solid #ddd",
-                  padding: "8px",
-                  backgroundColor: colors[4],
-                }}
-              ></td>
+              <td className="table">Отложенные</td>
+              <td className="table">5%</td>
+              <td className="table" style={{ backgroundColor: colors[4] }}></td>
             </tr>
           </tbody>
         </table>
